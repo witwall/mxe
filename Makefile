@@ -16,7 +16,7 @@ MXE_TARGET_LIST    := $(foreach LIB_TYPE,$(MXE_LIB_TYPES),\
 MXE_TARGETS        := i686-pc-mingw32.static
 
 DEFAULT_MAX_JOBS   := 6
-SOURCEFORGE_MIRROR := freefr.dl.sourceforge.net
+SOURCEFORGE_MIRROR := nchc.dl.sourceforge.net
 PKG_MIRROR         := s3.amazonaws.com/mxe-pkg
 PKG_CDN            := d1yihgixbnrglp.cloudfront.net
 
@@ -32,7 +32,7 @@ LIBTOOLIZE := $(shell glibtoolize --help >/dev/null 2>&1 && echo g)libtoolize
 PATCH      := $(shell gpatch --help >/dev/null 2>&1 && echo g)patch
 SED        := $(shell gsed --help >/dev/null 2>&1 && echo g)sed
 SORT       := $(shell gsort --help >/dev/null 2>&1 && echo g)sort
-WGET       := wget --no-check-certificate \
+WGET       := wget -c --no-check-certificate \
                    --user-agent=$(shell wget --version | \
                    $(SED) -n 's,GNU \(Wget\) \([0-9.]*\).*,\1/\2,p')
 
